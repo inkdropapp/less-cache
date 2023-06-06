@@ -2,7 +2,6 @@ let LessCache
 const crypto = require('crypto')
 const { basename, dirname, extname, join, relative } = require('path')
 
-const isEqual = require('lodash.isequal')
 const fs = require('@craftzdog/fs-plus')
 let less = null // Defer until it is actually used
 let lessFs = null // Defer until it is actually used
@@ -400,4 +399,14 @@ module.exports = LessCache = class LessCache {
     this.putCachedCss(filePath, digest, css, imports)
     return css
   }
+}
+
+function isEqual(a, b) {
+  if (a === b) return true
+  if (typeof a === 'undefined' || typeof b === 'undefined') return false
+  if (a.length !== b.length) return false
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false
+  }
+  return true
 }

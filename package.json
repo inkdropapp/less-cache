@@ -2,7 +2,7 @@
   "name": "@inkdropapp/less-cache",
   "version": "1.1.1",
   "description": "Less compile cache",
-  "main": "./lib/less-cache",
+  "main": "./src/less-cache",
   "scripts": {
     "test": "jasmine-focused --captureExceptions spec"
   },

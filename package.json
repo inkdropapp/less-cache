@@ -1,6 +1,6 @@
 {
   "name": "@inkdropapp/less-cache",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Less compile cache",
   "main": "./src/less-cache",
   "scripts": {

@@ -2,7 +2,7 @@ let LessCache
 const crypto = require('crypto')
 const { basename, dirname, extname, join, relative } = require('path')
 
-const _ = require('underscore-plus')
+const isEqual = require('lodash.isequal')
 const fs = require('@craftzdog/fs-plus')
 let less = null // Defer until it is actually used
 let lessFs = null // Defer until it is actually used
@@ -91,7 +91,7 @@ module.exports = LessCache = class LessCache {
   }
 
   getImportPaths() {
-    return _.clone(this.importPaths)
+    return [...this.importPaths]
   }
 
   getImportedFiles(importPaths) {
@@ -137,8 +137,8 @@ module.exports = LessCache = class LessCache {
     }
     const importedFiles = this.getImportedFiles(importPaths)
 
-    const pathsChanged = !_.isEqual(this.importPaths, importPaths)
-    const filesChanged = !_.isEqual(this.importedFiles, importedFiles)
+    const pathsChanged = !isEqual(this.importPaths, importPaths)
+    const filesChanged = !isEqual(this.importedFiles, importedFiles)
     if (pathsChanged) {
       this.importsCacheDir = this.cacheDirectoryForImports(importPaths)
       if (this.fallbackDir) {

@@ -1,23 +1,19 @@
 {
-  "name": "less-cache",
+  "name": "@inkdropapp/less-cache",
   "version": "1.1.1",
   "description": "Less compile cache",
   "main": "./lib/less-cache",
   "scripts": {
-    "clean": "shx rm -rf lib",
-    "test": "jasmine-focused --captureExceptions --coffee spec",
-    "coffee": "npm run clean && shx cp -r src lib && coffee -c -M -o lib lib && shx rm -rf lib/*.coffee",
-    "build": "npm run coffee",
-    "prepare": "npm run build"
+    "test": "jasmine-focused --captureExceptions spec"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/less-cache.git"
+    "url": "https://github.com/inkdropapp/less-cache.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/less-cache/issues"
+    "url": "https://github.com/inkdropapp/less-cache/issues"
   },
-  "homepage": "http://atom.github.io/less-cache",
+  "homepage": "https://github.com/inkdropapp/less-cache",
   "keywords": [
     "less",
     "less.js",
@@ -26,22 +22,21 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/atom/less-cache/raw/master/LICENSE.md"
+      "url": "http://github.com/inkdropapp/less-cache/raw/master/LICENSE.md"
     }
   ],
   "dependencies": {
-    "fs-plus": "^3.1.1",
+    "@craftzdog/fs-plus": "^4.0.1",
     "less": "^3.12.2",
     "underscore-plus": "^1.7.0",
     "walkdir": "^0.4.1"
   },
   "devDependencies": {
-    "coffeescript": "^1.12.7",
+    "cross-env": "^7.0.3",
     "fstream": "^1.0.12",
     "jasmine-focused": "^1",
+    "prettier": "^2.8.8",
     "temp": "^0.9.4",
-    "tmp": "0.2.1",
-    "shx": "^0.3.3",
-    "cross-env": "^7.0.3"
+    "tmp": "0.2.1"
   }
 }
